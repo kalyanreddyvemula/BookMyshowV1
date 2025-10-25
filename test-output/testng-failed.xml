@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.test1">
+      <class name="Tests.HomepageTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="testCase01"/>
-          <include name="pages"/>
+          <include name="selectCity"/>
           <include name="createDriver"/>
+          <include name="beforeMethod"/>
           <include name="afterEachMethod"/>
           <include name="afterTestComplete"/>
         </methods>
-      </class> <!-- Tests.test1 -->
+      </class> <!-- Tests.HomepageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

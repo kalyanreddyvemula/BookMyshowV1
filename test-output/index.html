@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Kalya\AppData\Local\Temp\testng-eclipse-217926299\testng-customsuite.xml</span>
+                    <span>C:\Users\Kalya\AppData\Local\Temp\testng-eclipse-1261181369\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Tests.test1" class="method navigator-link" hash-for-method="testCase01">testCase01</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Tests.HomepageTest" class="method navigator-link" hash-for-method="clickAndClose">clickAndClose</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Tests.test1</span>
+              <span class="class-name">Tests.HomepageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCase01">
-                  </a> <!-- testCase01 -->
-                  <span class="method-name">testCase01</span>
+                  <a name="clickAndClose">
+                  </a> <!-- clickAndClose -->
+                  <span class="method-name">clickAndClose</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Kalya\AppData\Local\Temp\testng-eclipse-217926299\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Kalya\AppData\Local\Temp\testng-eclipse-1261181369\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +145,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Tests.test1&quot;/&gt;
+      &lt;class name=&quot;Tests.HomepageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -187,14 +187,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCase01')
-data.setCell(0, 2, 'Tests.test1')
-data.setCell(0, 3, 21);
+data.setCell(0, 1, 'clickAndClose')
+data.setCell(0, 2, 'Tests.HomepageTest')
+data.setCell(0, 3, 10765);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 ms</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -209,9 +209,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">Tests.HomepageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">selectPopularCity</span>
+                <br/>
+                <span class="ignored-method-name">veiwingAllCities</span>
+                <br/>
+                <span class="ignored-method-name">selectCityOnSearch</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -220,30 +231,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Tests.test1</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Tests.HomepageTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">createDriver</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void Tests.test1.testCase01())</span>
-                <span class="method-start">5644 ms</span>
+                <span class="method-name">beforeMethod(public void Tests.HomepageTest.clickAndClose())</span>
+                <span class="method-start">13051 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">pages</span>
-                <span class="method-start">6240 ms</span>
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">13697 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testCase01</span>
-                <span class="method-start">6289 ms</span>
+                <span class="method-name">clickAndClose</span>
+                <span class="method-start">13813 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterEachMethod([TestResult name=testCase01 status=SUCCESS method=test1.testCase01()[pri:0, instance:Tests.test1@311...)</span>
-                <span class="method-start">6318 ms</span>
+                <span class="method-name">afterEachMethod([TestResult name=clickAndClose status=SUCCESS method=HomepageTest.clickAndClose()[pri:0, instance:Te...)</span>
+                <span class="method-start">24592 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterTestComplete</span>
-                <span class="method-start">6334 ms</span>
+                <span class="method-start">24600 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
