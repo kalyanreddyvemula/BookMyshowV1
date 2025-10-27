@@ -72,6 +72,16 @@ public class HomePage {
     @FindBy(xpath = "//input[@class = 'sc-vuznvr-5 extnng']")
     WebElement searchInActive;
     
+    
+    @FindBy(xpath = "//a[text() = 'About Us']")
+    WebElement aboutusFooter;
+    
+    @FindBy(xpath = "//a[text() = 'Terms and Conditions']")
+    WebElement footerTandC;
+    
+    @FindBy(xpath = "//a[text() = 'Privacy Policy']")
+    WebElement pandPfooter;
+    
     public void popularCities(String s) {
     	
     	cu.clickSingleElementinList(popularCities, s);
@@ -154,5 +164,25 @@ public class HomePage {
     public void searchText() {
     	cu.sendKeys(searchInActive, "K-RA");
     }
+    
+    public void scrolltoAbout() {
+    	cu.clickElement(aboutusFooter);  	
+    	
+    }
+    
+    public void scrolltoTandC () {
+    	cu.clickElement(footerTandC);  	
+    	
+    }
+    
+    public void scrolltoPP () {
+    	cu.clickElement(pandPfooter);  	
+    }
+    
+    public void back() {
+    	cu.goBack();
+    }
+    
+    
 }
 

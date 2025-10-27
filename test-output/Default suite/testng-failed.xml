@@ -6,10 +6,10 @@
       <class name="Tests.HomepageTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="detailsOfProgram"/>
+          <include name="footerVerification"/>
           <include name="selectPopularCity"/>
-          <include name="beforeMethod"/>
           <include name="createDriver"/>
+          <include name="beforeMethod"/>
           <include name="afterEachMethod"/>
           <include name="afterTestComplete"/>
         </methods>

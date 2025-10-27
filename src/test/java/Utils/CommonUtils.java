@@ -2,6 +2,7 @@ package Utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -104,6 +105,12 @@ public class CommonUtils {
 	
 	public void goBack() {
 		driver.navigate().back();
+	}
+	
+	
+	public void scrolltoView(WebElement element) {
+		Actions act = new Actions(driver);
+		act.scrollToElement(element).perform();
 	}
 	
 	

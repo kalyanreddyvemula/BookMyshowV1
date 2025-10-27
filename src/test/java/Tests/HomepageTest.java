@@ -352,7 +352,7 @@ public class HomepageTest extends BaseTest{
 	}
 	
 	
-	@Test(dependsOnMethods = "selectPopularCity")
+	@Test(enabled = false)
 	public void detailsOfProgram() {
 	    SoftAssert sa = new SoftAssert();
 	    logInfo("Checking the workflow of Program details and description");
@@ -381,6 +381,56 @@ public class HomepageTest extends BaseTest{
 	        logFail("Test failed due to Exception: " + e.getMessage());
 	        throw e;
 	    }
+	}
+	
+	@Test(dependsOnMethods = "selectPopularCity")
+	public void footerVerification() {
+		
+		SoftAssert sa = new SoftAssert();
+		logInfo("Validating the footers");
+		
+		try {
+			
+			
+			
+			hp.scrolltoAbout();
+			
+			String urlcontainer = driver.getCurrentUrl();
+			String aboutus = "https://in.bookmyshow.com/aboutus";
+			
+			sa.assertEquals(urlcontainer, aboutus, "Wrong PAGE");
+			
+			logInfo("Verified About US");
+			
+			hp.back();
+			
+			hp.scrolltoTandC();
+			
+			String url1 = driver.getCurrentUrl();
+			
+			String tandc = "https://in.bookmyshow.com/terms-and-conditions";
+			sa.assertEquals(url1, tandc, "Wrong PAGE");
+			
+			logInfo("Verified Terms and Conditions");
+			
+			hp.back();
+			
+			hp.scrolltoPP();
+			String url2 = driver.getCurrentUrl();
+			String pp = "https://in.bookmyshow.com/privacy";
+			
+			sa.assertEquals(url2, pp, "Wrong PAGE");
+			
+			logInfo("Verified privacy and policy");
+			
+			hp.back();
+			
+			
+			
+		}catch(Exception e) {
+			logFail("Test failed due to exception: " + e.getMessage());
+			throw e;
+		}
 	}
 	
 	

@@ -42,12 +42,12 @@ public class Movies {
         List<Map<String, String>> moviesList = new ArrayList<>(); 
         List<WebElement> movieElements = driver.findElements(By.xpath("//div[@class='sc-7o7nez-0 elfplV']")); 
         
-        // Use index instead of direct element reference
+        
         for(int i = 0; i < movieElements.size(); i++) { 
-            // Re-find the elements each time to avoid stale reference
+            
             List<WebElement> currentMovies = driver.findElements(By.xpath("//div[@class='sc-7o7nez-0 elfplV']"));
             
-            if(i >= currentMovies.size()) break; // Safety check
+            if(i >= currentMovies.size()) break; 
             
             WebElement movieElement = currentMovies.get(i);
             Map<String, String> movieDetails = new HashMap<>(); 
@@ -74,10 +74,10 @@ public class Movies {
                 movieDetails.put("About", md.aboutMovie()); 
                 moviesList.add(movieDetails); 
                 
-                // Go back and wait for page to reload
+                
                 driver.navigate().back();
                 
-                // Wait for movies to be visible again
+                
                 new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//div[@class='sc-7o7nez-0 elfplV']")));
