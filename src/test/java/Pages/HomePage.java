@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import Utils.CommonUtils;
@@ -81,6 +82,9 @@ public class HomePage {
     
     @FindBy(xpath = "//a[text() = 'Privacy Policy']")
     WebElement pandPfooter;
+    
+    @FindBy(xpath = "//span[@class = 'sc-f42fb7-2 ieglPM']")
+    List<WebElement> suggestions;
     
     public void popularCities(String s) {
     	
@@ -161,8 +165,9 @@ public class HomePage {
     	cu.clickElement(searchBar);
     }
    
-    public void searchText() {
-    	cu.sendKeys(searchInActive, "K-RA");
+    public void searchText(String program) {
+    	cu.sendKeys(searchInActive, program);
+    	
     }
     
     public void scrolltoAbout() {
@@ -181,6 +186,33 @@ public class HomePage {
     
     public void back() {
     	cu.goBack();
+    }
+    
+    public void clickSuggestion(String s) {
+    	searchInActive.click();
+    	searchInActive.sendKeys(s);
+    	
+    	boolean Clicked = false;
+    	
+    	wait.until(ExpectedConditions.visibilityOfAllElements(suggestions));
+    	
+    	for(int i = 0; i<suggestions.size(); i++) {
+    		
+    		String sasa = suggestions.get(i).getText().trim();
+    		if(sasa.contains(s)) {
+    			suggestions.get(i).click();
+    			Clicked = true;
+    			break;
+    		}
+    		
+    	}
+    	if(!Clicked) {
+			System.out.println("No Suggestion found: " +s);
+		}
+    	
+    	
+    	
+    	
     }
     
     

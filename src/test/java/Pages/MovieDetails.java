@@ -61,5 +61,10 @@ public class MovieDetails {
 		String about = aboutMovie.getText().trim();
 		return about;
 	}
+	
+	public String movieT() {
+		String na = movieTitle.getText().trim();
+		return na;
+	}
 }
 

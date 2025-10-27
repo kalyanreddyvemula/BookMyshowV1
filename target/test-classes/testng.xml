@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Search Bar Functionality">
+    <test name="Run City Tests">
+        <groups>
+            <run>
+                <include name="citySelection"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Tests.HomepageTest"/>
+            <class name="Tests.SearchBarTest"/>
+        </classes>
+    </test>
+</suite>
