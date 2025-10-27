@@ -1,55 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-25T22:54:57 IST" name="Default suite" finished-at="2025-10-25T22:55:23 IST" duration-ms="25420">
+  <suite started-at="2025-10-27T13:10:19 IST" name="Default suite" finished-at="2025-10-27T13:10:25 IST" duration-ms="5626">
     <groups>
     </groups>
-    <test started-at="2025-10-25T22:54:57 IST" name="Default test" finished-at="2025-10-25T22:55:23 IST" duration-ms="25420">
+    <test started-at="2025-10-27T13:10:19 IST" name="Default test" finished-at="2025-10-27T13:10:25 IST" duration-ms="5626">
       <class name="Tests.HomepageTest">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:54:57 IST" name="createDriver" finished-at="2025-10-25T22:55:10 IST" duration-ms="13023" status="PASS">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:19 IST" name="createDriver" finished-at="2025-10-27T13:10:23 IST" duration-ms="3833" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDriver -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:55:10 IST" name="beforeMethod" finished-at="2025-10-25T22:55:11 IST" duration-ms="637" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:23 IST" name="beforeMethod" finished-at="2025-10-27T13:10:23 IST" duration-ms="283" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Tests.HomepageTest.clickAndClose()]]>
+                <![CDATA[public void Tests.HomepageTest.selectPopularCity()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:55:11 IST" name="beforeMethod" finished-at="2025-10-25T22:55:11 IST" duration-ms="113" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:23 IST" name="beforeMethod" finished-at="2025-10-27T13:10:23 IST" duration-ms="31" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="clickAndClose()[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:55:11 IST" name="clickAndClose" finished-at="2025-10-25T22:55:22 IST" duration-ms="10765" status="PASS">
+        <test-method signature="selectPopularCity()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:23 IST" name="selectPopularCity" finished-at="2025-10-27T13:10:24 IST" duration-ms="334" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickAndClose -->
-        <test-method is-config="true" signature="afterEachMethod(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:55:22 IST" name="afterEachMethod" finished-at="2025-10-25T22:55:22 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- selectPopularCity -->
+        <test-method signature="changeCity()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="changeCity" finished-at="2025-10-27T13:10:24 IST" depends-on-methods="Tests.HomepageTest.selectPopularCity" duration-ms="702" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeCity -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="beforeMethod" finished-at="2025-10-27T13:10:24 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="beforeMethod" finished-at="2025-10-27T13:10:24 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=clickAndClose status=SUCCESS method=HomepageTest.clickAndClose()[pri:0, instance:Tests.HomepageTest@3eb25e1a] output={null}]]]>
+                <![CDATA[public void Tests.HomepageTest.changeCity()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterEachMethod(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="afterEachMethod" finished-at="2025-10-27T13:10:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=selectPopularCity status=SUCCESS method=HomepageTest.selectPopularCity()[pri:0, instance:Tests.HomepageTest@233795b6] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[public void Tests.HomepageTest.clickAndClose()]]>
+                <![CDATA[public void Tests.HomepageTest.selectPopularCity()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachMethod -->
-        <test-method is-config="true" signature="afterTestComplete()[pri:0, instance:Tests.HomepageTest@3eb25e1a]" started-at="2025-10-25T22:55:22 IST" name="afterTestComplete" finished-at="2025-10-25T22:55:23 IST" duration-ms="781" status="PASS">
+        <test-method is-config="true" signature="afterTestComplete()[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="afterTestComplete" finished-at="2025-10-27T13:10:25 IST" duration-ms="416" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestComplete -->
+        <test-method is-config="true" signature="afterEachMethod(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:Tests.HomepageTest@233795b6]" started-at="2025-10-27T13:10:24 IST" name="afterEachMethod" finished-at="2025-10-27T13:10:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=changeCity status=SUCCESS method=HomepageTest.changeCity()[pri:0, instance:Tests.HomepageTest@233795b6] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void Tests.HomepageTest.changeCity()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachMethod -->
       </class> <!-- Tests.HomepageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

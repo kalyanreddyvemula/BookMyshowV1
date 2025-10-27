@@ -6,10 +6,11 @@
       <class name="Tests.HomepageTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="selectCity"/>
+          <include name="changeCity"/>
+          <include name="selectPopularCity"/>
+          <include name="afterEachMethod"/>
           <include name="createDriver"/>
           <include name="beforeMethod"/>
-          <include name="afterEachMethod"/>
           <include name="afterTestComplete"/>
         </methods>
       </class> <!-- Tests.HomepageTest -->

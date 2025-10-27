@@ -45,6 +45,28 @@ public class HomePage {
     WebElement locationVerification;
     
     
+    @FindBy(xpath = "//a[text() = 'Movies']")
+    WebElement pMovie;
+    
+    @FindBy(xpath = "//a[contains(@href, 'stream?')]")
+    WebElement pStream;
+    
+    @FindBy(xpath = "//a[text() = 'Events']")
+    WebElement pEvents;
+    
+    @FindBy(xpath = "//a[text() = 'Plays']")
+    WebElement pPlays;
+    
+    @FindBy(xpath = "//a[text() = 'Sports']")
+    WebElement pSports;
+    
+    @FindBy(xpath = "//a[text() = 'Activities']")
+    WebElement pActivities;
+    
+    @FindBy(xpath = "//span[@class = 'sc-1or3vea-16 gPcyDI']")
+    WebElement currentCityNodal;
+    
+    
     public void popularCities(String s) {
     	
     	cu.clickSingleElementinList(popularCities, s);
@@ -82,9 +104,41 @@ public class HomePage {
     		return true;
     	}else {
     		return false;
-    	}
+    	}	
     	
-    	
+    }
+    
+    public void clickPMovies() {
+    	cu.clickElement(pMovie);
+    }
+    
+    public void clickPStream() {
+    	cu.clickElement(pStream);
+    }
+    
+    public void clickPEvents() {
+    	cu.clickElement(pEvents);
+    }
+    
+    public void clickPPlays() {
+    	cu.clickElement(pPlays);
+    }
+    
+    public void clickPSports() {
+    	cu.clickElement(pSports);
+    }
+    
+    public void clickPAct() {
+    	cu.clickElement(pActivities);
+    }
+    
+    public void cityNodal() {
+    	cu.clickElement(currentCityNodal);
+    }
+    
+    public String newCityName() {
+    	String cName = currentCityNodal.getText();
+    	return cName;
     }
     
    

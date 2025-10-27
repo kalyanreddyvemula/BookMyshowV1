@@ -102,6 +102,12 @@ public class CommonUtils {
 	}
 	
 	
+	public void goBack() {
+		driver.navigate().back();
+	}
+	
+	
+	
 
 	
 }
