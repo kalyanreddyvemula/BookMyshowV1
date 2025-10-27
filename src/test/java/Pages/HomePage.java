@@ -66,12 +66,18 @@ public class HomePage {
     @FindBy(xpath = "//span[@class = 'sc-1or3vea-16 gPcyDI']")
     WebElement currentCityNodal;
     
+    @FindBy(xpath = "//div[@class = 'sc-1or3vea-13 kbbBtJ']")
+    WebElement searchBar;
+    
+    @FindBy(xpath = "//input[@class = 'sc-vuznvr-5 extnng']")
+    WebElement searchInActive;
     
     public void popularCities(String s) {
     	
     	cu.clickSingleElementinList(popularCities, s);
     	
     }
+    
     
     public Boolean cityNameVisible(String s) {
     	WebElement city =  driver.findElement(By.xpath("//span[text()='" + s + "']"));
@@ -141,6 +147,12 @@ public class HomePage {
     	return cName;
     }
     
+    public void searchBarClick() {
+    	cu.clickElement(searchBar);
+    }
    
+    public void searchText() {
+    	cu.sendKeys(searchInActive, "K-RA");
+    }
 }
 

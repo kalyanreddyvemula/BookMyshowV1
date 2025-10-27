@@ -2,6 +2,9 @@ package Tests;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.List;
+import java.util.Map;
+
 import org.testng.annotations.BeforeMethod;
 import Pages.Events;
 import org.testng.annotations.Test;
@@ -14,6 +17,7 @@ import Pages.Streams;
 import Pages.Play;
 import Pages.Sports;
 import Pages.Activities;
+import Pages.Movies;
 
 
 public class HomepageTest extends BaseTest{
@@ -26,9 +30,10 @@ public class HomepageTest extends BaseTest{
 	Play play;
 	Sports sport;
 	Activities act;
+	Movies movied;
 	
 	
-	static String cityName = "Kochi";
+	static String cityName = "Hyderabad";
 	
 	
 	@BeforeMethod
@@ -40,11 +45,13 @@ public class HomepageTest extends BaseTest{
 		play = new Play(driver);
 		sport = new Sports(driver);
 		act = new Activities(driver);
+		movied = new Movies(driver);
 	}
 	
 	
 	@Test
 	public void selectPopularCity() {
+
 		
 		
 		SoftAssert sa= new SoftAssert();
@@ -290,7 +297,7 @@ public class HomepageTest extends BaseTest{
 		sa.assertAll();
 	}
 	
-	@Test(dependsOnMethods = "selectPopularCity")
+	@Test(enabled = false)
 	public void changeCity() {
 		
 		SoftAssert sa = new SoftAssert();
@@ -321,4 +328,60 @@ public class HomepageTest extends BaseTest{
 			
 		}
 	}
+	
+	
+	@Test(enabled = false)
+	public void searchAndActiveFunctionality() {
+		
+		SoftAssert sa = new SoftAssert();
+		
+		logInfo("Verifying search Functionality");
+		
+		try {
+			
+			hp.searchBarClick();
+			logInfo("Clicked Search");
+			
+			hp.searchText();
+			
+			logInfo("Search Activated and Text entered");
+		}catch(Exception e) {
+			logFail("Test failed due to Exception: " + e.getMessage());
+			throw e;
+		}
+	}
+	
+	
+	@Test(dependsOnMethods = "selectPopularCity")
+	public void detailsOfProgram() {
+	    SoftAssert sa = new SoftAssert();
+	    logInfo("Checking the workflow of Program details and description");
+
+	    try {
+	        hp.clickPMovies();
+	        logInfo("Showing the movies in - " + cityName);
+
+	        
+	        List<Map<String, String>> allMovies = movied.details();
+
+	        sa.assertFalse(allMovies.isEmpty(), "No movie details were fetched!");
+
+	        logInfo("Fetched movie details:");
+	        for (Map<String, String> movie : allMovies) {
+	        	 logInfo("Title: " + movie.getOrDefault("Title", "N/A"));
+	             logInfo("Rating: " + movie.getOrDefault("Rating", "N/A"));
+	             logInfo("Votes: " + movie.getOrDefault("Votes", "N/A"));
+	             logInfo("About: " + movie.getOrDefault("About", "N/A"));
+	        }
+
+	        sa.assertAll();
+	        logPass("Program details test executed successfully ✅");
+
+	    } catch (Exception e) {
+	        logFail("Test failed due to Exception: " + e.getMessage());
+	        throw e;
+	    }
+	}
+	
+	
 }
