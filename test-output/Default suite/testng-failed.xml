@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.HomepageTest">
+      <class name="Tests.SearchBarTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="footerVerification"/>
-          <include name="selectPopularCity"/>
-          <include name="createDriver"/>
           <include name="beforeMethod"/>
+          <include name="searchRel"/>
+          <include name="createDriver"/>
           <include name="afterEachMethod"/>
           <include name="afterTestComplete"/>
         </methods>
-      </class> <!-- Tests.HomepageTest -->
+      </class> <!-- Tests.SearchBarTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

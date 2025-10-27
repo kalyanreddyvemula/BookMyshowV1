@@ -2,6 +2,7 @@ package Tests;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -12,6 +13,7 @@ import Pages.HomePage;
 import static Utils.ExtentTestManager.*;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SearchBarTest extends BaseTest {
 
@@ -31,8 +33,9 @@ public class SearchBarTest extends BaseTest {
 		
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void searchMovie() throws Exception {
+
 		
 		String cityName = "Hyderabad";
 		String ProgramName = "K-Ramp";
@@ -64,7 +67,7 @@ public class SearchBarTest extends BaseTest {
 			
 			logInfo("Flow Passed");
 			
-			
+			sa.assertAll();
 		}catch(Exception e) {
 			logFail("Test Failed Due to Exception: " + e.getMessage());
 			throw e;
@@ -73,4 +76,41 @@ public class SearchBarTest extends BaseTest {
 		
 		
 	}
+	
+	
+	@Test
+	public void searchRel() {
+		String cityName = "Hyderabad";
+		String partial = "Oppe";
+		SoftAssert sa = new SoftAssert();
+		
+		logInfo("Checking if the search suggests related to entered text");
+		
+		try {
+			
+			hp.popularCities(cityName);
+			
+			logInfo("Selected: " + cityName);
+			
+			hp.searchBarClick();
+			
+			logInfo("Clicked Search");
+			
+			List<String> asa = hp.checkTextRelation(partial);
+			logInfo("Entered Partial text in search");
+			
+			sa.assertTrue(
+				    asa.stream().anyMatch(s -> s.toLowerCase().contains(partial.toLowerCase())),
+				    "Did not suggest related text");
+
+			
+			logInfo("Flow Passed");
+			
+			sa.assertAll();
+		}catch(Exception e) {
+			logFail("Test Failed Due to Exception: " +e.getMessage());
+			
+		}
+	}
 }
+

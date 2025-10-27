@@ -1,5 +1,6 @@
 package Pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -208,10 +209,34 @@ public class HomePage {
     	}
     	if(!Clicked) {
 			System.out.println("No Suggestion found: " +s);
-		}
+		}	
+    	
+    }
+    
+    public List<String> checkTextRelation(String s) throws InterruptedException {
+    	
+    	searchInActive.click();
+    	searchInActive.clear();
+    	searchInActive.sendKeys(s);
+    	
+    	Thread.sleep(2000);
     	
     	
+    	wait.until(ExpectedConditions.visibilityOfAllElements(suggestions));
     	
+    	List<String> sugg = new ArrayList<>();
+    	
+    	int count = Math.min(3, suggestions.size());
+    	
+    	for(int i=0; i<count; i++) {
+    		String sasa = suggestions.get(i).getText().trim();  
+    		sugg.add(sasa);
+    		
+    	}
+    	
+    	System.out.println(sugg);
+    	
+    	return sugg;
     	
     }
     
