@@ -1,5 +1,7 @@
 package Pages;
 
+import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +32,18 @@ public class Movies {
 
     @FindBy(xpath = "//div[@class='sc-7o7nez-0 elfplV']")
     List<WebElement> moviesList;
+    
+    @FindBy(xpath = "//*[text()='Languages']")
+    WebElement selectLanguage;
+    
+    @FindBy(xpath = "//*[text() = 'Genres']")
+    WebElement filterGenere;
+    
+    @FindBy(xpath = "//div[@class = 'sc-7o7nez-0 hRJgHk']")
+    List<WebElement> genres;
 
+    @FindBy(xpath = "//div[@class = 'sc-2k6tnd-1 kAzEtX']/a")
+    List<WebElement> verifyingGenre;
     
     public WebElement verifyMovieDispaly(String city) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -87,6 +100,69 @@ public class Movies {
         System.out.println("Movies extracted: " + moviesList); 
         return moviesList;
     }
+    
+    public void genereFilter() {
+    	cu.clickElement(filterGenere);
+    }
+    
+    public void selectLanguage() {
+    	cu.clickElement(selectLanguage);
+    }
+    
+    
+    public void selectGenere(String genre) {
+    	String action = genre;
+    	
+    	for(int i =0; i<genres.size(); i++) {
+    		String act = genres.get(i).getText().trim();
+    		
+    		if(act.contains(action)) {
+    			genres.get(i).click();
+    			return;
+    		}
+    	}
+    }
+    
+    public Boolean verifyAction(String s) {
+    	
+
+        
+    	boolean isVisible = false;
+    	
+    	for(int i=0; i<moviesList.size(); i++) {
+    		
+    		
+    		if(moviesList.get(i).isDisplayed()) {
+    			moviesList.get(i).click();
+    			
+    			for(int j =0; j<verifyingGenre.size(); j++) {
+    				String ge = verifyingGenre.get(j).getText().trim();
+    				if(ge.contains(s)) {
+    					isVisible = true;
+    					break;	
+    				}
+    				System.out.println(ge);
+    				
+    			}
+    			
+
+				driver.navigate().back();
+				
+				new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//div[@class = 'sc-7o7nez-0 hRJgHk']")));
+    			
+    		}
+    	}
+    	
+    	
+    	
+    	return isVisible;
+    }
+    
+    
+    
+    
 
   
 }

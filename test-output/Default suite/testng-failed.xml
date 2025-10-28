@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="beforeMethod"/>
-          <include name="searchRel"/>
+          <include name="filterGenereAction"/>
           <include name="createDriver"/>
           <include name="afterEachMethod"/>
           <include name="afterTestComplete"/>

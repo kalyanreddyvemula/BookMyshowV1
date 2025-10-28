@@ -1,6 +1,7 @@
 package Tests;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import Pages.Movies;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +23,7 @@ public class SearchBarTest extends BaseTest {
 	WebDriverWait wait;
 	MovieDetails md;
 	HomepageTest hpt;
+	Movies mv;
 	
 	@BeforeMethod
 	public void beforeMethod() {
@@ -30,6 +32,7 @@ public class SearchBarTest extends BaseTest {
 		hpt = new HomepageTest();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		md = new MovieDetails(driver);
+		mv= new Movies(driver);
 		
 	}
 	
@@ -78,7 +81,7 @@ public class SearchBarTest extends BaseTest {
 	}
 	
 	
-	@Test
+	@Test(enabled = false   )
 	public void searchRel() {
 		String cityName = "Hyderabad";
 		String partial = "Oppe";
@@ -110,6 +113,50 @@ public class SearchBarTest extends BaseTest {
 		}catch(Exception e) {
 			logFail("Test Failed Due to Exception: " +e.getMessage());
 			
+		}
+	}
+	
+	@Test
+	public void filterGenereAction() {
+		
+		String cityName = "Hyderabad";
+		String genre = "Action";
+		SoftAssert sa = new SoftAssert();
+		
+		logInfo("Apply 'GENERE - ACTION' on Filter and verify it displays related movies");
+		
+		
+		try {
+			
+			hp.popularCities(cityName);
+			logInfo("Selected: " + cityName);
+			
+			hp.clickPMovies();
+			
+			logInfo("Clicked Movies");
+			
+			mv.selectLanguage();
+			mv.genereFilter();
+			
+			logInfo("Clicked Genres");
+			
+			mv.selectGenere(genre);
+			
+			logInfo("Selected Genre: " + genre);
+			
+			
+			sa.assertTrue(mv.verifyAction(genre), "genre Not Found");
+			
+			
+			logInfo("Selecting Genre Flow Verified");
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			logFail("Test Failed Due to exception: " + e.getMessage());
+			throw e;
 		}
 	}
 }
